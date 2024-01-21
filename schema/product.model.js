@@ -2,7 +2,8 @@ const mongoose = require("mongoose");
 const {
   product_collection_enums,
   product_status_enums,
-  product_volue_enums
+  product_volue_enums,
+  product_related_enums
 } = require("../lib/config");
 const Schema = mongoose.Schema;
 
@@ -23,6 +24,14 @@ const productSchema = new mongoose.Schema(
       default: "ACTIVE",
       enum: {
         values: product_status_enums,
+        message: "{VALUE} is not among permitted enum values}"
+      }
+    },
+    product_related: {
+      type: String,
+      required: true,
+      enum: {
+        values: product_related_enums,
         message: "{VALUE} is not among permitted enum values}"
       }
     },
