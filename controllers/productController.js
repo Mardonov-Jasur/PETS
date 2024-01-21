@@ -14,6 +14,9 @@ productController.addNewProduct = async (req, res) => {
     console.log("POST: cont/addNewProduct");
     // TODO: product creation develop
     res.json({test: "딩동딩동"});
+    // data.product_images = req.files.map((ele) => {
+    //   return ele.path.replace(/\\/g, "/");
+    // });
   } catch (err) {
     console.log(`ERROR, cont/addNewProduct, ${err.message}`);
   }
