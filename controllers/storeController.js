@@ -1,4 +1,6 @@
+const assert = require("assert");
 const Member = require("../models/Member");
+const Definer = require("../lib/mistake");
 
 let storeController = module.exports;
 
@@ -68,6 +70,17 @@ storeController.loginProcess = async (req, res) => {
 storeController.logout = (req, res) => {
   console.log("GET cont.logout");
   res.send("Siz logout sahifasidasiz");
+};
+
+storeController.validateAuthRestaurant = (req, res, next) => {
+  if (req.session?.member?.mb_type === "STORE") {
+    req.member = req.session.member;
+    next();
+  } else
+    res.json({
+      state: "fail",
+      message: "only authenticated members with store type"
+    });
 };
 
 storeController.checkSessions = (req, res) => {
