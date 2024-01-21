@@ -40,7 +40,7 @@ const productSchema = new mongoose.Schema(
       required: true
     },
     product_description: {
-      type: Number,
+      type: String,
       required: true
     },
     product_images: {
@@ -58,7 +58,7 @@ const productSchema = new mongoose.Schema(
       required: false,
       default: 0
     },
-    product_mb_id: {
+    store_mb_id: {
       type: Schema.Types.ObjectId,
       required: false,
       ref: "Member"

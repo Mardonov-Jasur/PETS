@@ -1,3 +1,7 @@
+const Product = require("../models/Product");
+const assert = require("assert");
+const Definer = require("../lib/mistake");
+
 let productController = module.exports;
 
 productController.getAllProducts = async (req, res) => {
@@ -12,11 +16,29 @@ productController.getAllProducts = async (req, res) => {
 productController.addNewProduct = async (req, res) => {
   try {
     console.log("POST: cont/addNewProduct");
-    // TODO: product creation develop
-    res.json({test: "딩동딩동"});
-    // data.product_images = req.files.map((ele) => {
-    //   return ele.path.replace(/\\/g, "/");
-    // });
+    assert(req.files, Definer.generel_err3);
+
+    const product = new Product();
+    let data = req.body;
+
+    data.product_images = req.files.map((ele) => {
+      return ele.path;
+    });
+
+     data.product_images = req.files.map((ele) => {
+      return ele.path.replace(/\\/g, "/");
+    });
+
+    const result = await product.addNewProductData(data, req.member);
+
+   
+    console.log("data", data)
+
+    const html = `<script>
+                        alert(new dusg added successfully);
+                        window.location.replace('/resto/products/menu');
+                     </script>`;
+    res.end(html);
   } catch (err) {
     console.log(`ERROR, cont/addNewProduct, ${err.message}`);
   }
