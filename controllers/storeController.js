@@ -1,17 +1,20 @@
 const assert = require("assert");
 const Member = require("../models/Member");
 const Definer = require("../lib/mistake");
+const Product = require("../models/Product");
 
 let storeController = module.exports;
 
-storeController.getMyStoreData = async (req, res) => {
+storeController.getMyStoreProducts = async (req, res) => {
   try {
-    console.log("GET: cont/getMyStoreData");
+    console.log("GET: cont/getMyStoreProducts");
     // TODO: Get my store products
 
-    res.render("store-menu");
+     const product = new Product();
+     const data = await product.getAllProductsDataResto(res.locals.member);
+     res.render("store-menu", { restaurant_data: data });
   } catch (err) {
-    console.log(`ERROR, cont/getMyStoreData, ${err.message}`);
+    console.log(`ERROR, cont/getMyStoreProducts, ${err.message}`);
     res.json({ state: "fail", message: err.message });
   }
 };

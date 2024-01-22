@@ -21,7 +21,7 @@ router_bssr.get("/check-me", storeController.checkSessions);
 
 /**Product controller */
 router_bssr
-  .get("/products/menu", storeController.getMyStoreData)
+  .get("/products/menu", storeController.getMyStoreProducts)
   .post(
     "/products/create",
     storeController.validateAuthRestaurant,
