@@ -10,6 +10,7 @@ const uploader_product = require("./utils/upload-multer,js")("products");
  ***********************************/
 
 /**Store Controller */
+router_bssr.get("/", storeController.home);
 router_bssr
   .get("/signup", storeController.getSignupMyStore)
   .post("/signup", storeController.signupProcess);
