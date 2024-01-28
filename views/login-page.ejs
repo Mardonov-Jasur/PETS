@@ -1,7 +1,38 @@
 <%- include('includes/header') %>
+<link rel="stylesheet" href="/css/login.css" />
 
 <body>
-    <h1>Login page</h1>
+  <form class="login_container">
+    <div class="login_frame">
+      <span class="login">Login</span>
+      <div class="login_input_1">
+        <input
+          type="text"
+          placeholder="Username"
+          name="mb_nick"
+          value=""
+          required />
+      </div>
+
+      <div class="login_input_2">
+        <input
+          type="password"
+          placeholder="Password"
+          name="mb_password"
+          value=""
+          required />
+      </div>
+      <button class="login_btn" name="login" type="submit">Login</button>
+      <div class="home_frame">
+        <div class="home_page_1">
+          <a href="/store">Home</a>
+        </div>
+        <div class="home_page_2">
+          <a href="/store/signup">Signup</a>
+        </div>
+      </div>
+    </div>
+  </form>
 </body>
 
 <%- include('includes/footer') %>

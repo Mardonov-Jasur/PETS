@@ -20,9 +20,9 @@ storeController.getMyStoreProducts = async (req, res) => {
     console.log("GET: cont/getMyStoreProducts");
     // TODO: Get my store products
 
-     const product = new Product();
-     const data = await product.getAllProductsDataResto(res.locals.member);
-     res.render("store-menu", { restaurant_data: data });
+    const product = new Product();
+    const data = await product.getAllProductsDataResto(res.locals.member);
+    res.render("store-menu", { restaurant_data: data });
   } catch (err) {
     console.log(`ERROR, cont/getMyStoreProducts, ${err.message}`);
     res.json({ state: "fail", message: err.message });
@@ -41,7 +41,7 @@ storeController.getSignupMyStore = async (req, res) => {
 
 storeController.signupProcess = async (req, res) => {
   try {
-    console.log("POST: cont/signup");
+    console.log("POST: cont/signupProcess");
     const data = req.body,
       member = new Member(),
       new_member = await member.signupDate(data);
@@ -49,7 +49,7 @@ storeController.signupProcess = async (req, res) => {
     req.session.member = new_member;
     res.redirect("/store/products/menu");
   } catch (err) {
-    console.log(`ERROR, cont/signup, ${err.message}`);
+    console.log(`ERROR, cont/signupProcess, ${err.message}`);
     res.json({ state: "fail", message: err.message });
   }
 };
@@ -66,16 +66,18 @@ storeController.getLoginMyStore = async (req, res) => {
 
 storeController.loginProcess = async (req, res) => {
   try {
-    console.log("POST: cont/login");
+    console.log("POST: cont/loginProcess");
     const data = req.body,
       member = new Member(),
       result = await member.loginDate(data);
     req.session.member = result;
     req.session.save(function () {
-      res.redirect("/store/products/menu");
+      result.mb_type === "ADMIN"
+        ? res.redirect("/store/all-store")
+        : res.redirect("/store/products/menu");
     });
   } catch (err) {
-    console.log(`ERROR, cont/login, ${err.message}`);
+    console.log(`ERROR, cont/loginProcess, ${err.message}`);
     res.json({ state: "fail", message: err.message });
   }
 };

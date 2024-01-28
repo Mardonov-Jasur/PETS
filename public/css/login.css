@@ -1,0 +1,152 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.login_container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: #e6c48209;
+}
+
+.login_frame {
+  position: relative;
+  width: 900px;
+  height: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 2px solid white;
+  border-radius: 20px;
+  background: #58270182;
+}
+
+.login_frame .login {
+  position: absolute;
+  top: 100px;
+  font-family: "Poppins";
+  font-size: 80px;
+  font-weight: 500;
+  color: aliceblue;
+  width: 100%;
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login_frame .login_input_1 input {
+  position: relative;
+  width: 600px;
+  height: 60px;
+  margin-top: -30px;
+  margin-bottom: 160px;
+  display: flex;
+  align-items: center;
+  border: 1px solid white;
+  border-radius: 13px;
+  font-family: "Poppins";
+  font-size: 26px;
+  padding-left: 10px;
+  background: #5827017e;
+  color: white;
+}
+
+.login_frame .login_input_2 input {
+  position: relative;
+  width: 600px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  border: 1px solid white;
+  border-radius: 13px;
+  font-family: "Poppins";
+  font-size: 26px;
+  padding-left: 10px;
+  background: #5827017e;
+  color: white;
+}
+
+.login_frame .login_input_1 input::placeholder {
+  position: relative;
+  font-size: 30px;
+  left: 10px;
+  line-height: 40px;
+  color: white;
+}
+
+.login_frame .login_input_2 input::placeholder {
+  position: relative;
+  font-size: 30px;
+  left: 10px;
+  line-height: 40px;
+  color: white;
+}
+
+.login_frame .login_btn {
+  position: relative;
+  width: 600px;
+  height: 60px;
+  background: #224957;
+  top: 60px;
+  margin-bottom: 60px;
+  font-size: 30px;
+  line-height: 40px;
+  color: white;
+  border-radius: 13px;
+  cursor: pointer;
+}
+
+.login_frame .login_btn:hover {
+  opacity: 95%;
+  color: white;
+  background-color: #10232b;
+}
+
+.login_frame .home_frame {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  top: 110px;
+  width: 200px;
+  height: 50px;
+  display: flex;
+}
+
+.login_frame .home_page_1 a {
+  position: relative;
+  padding: 10px;
+  top: 12px;
+  left: -140px;
+  font-size: 40px;
+  line-height: 40px;
+  color: #224957;
+  text-decoration: none;
+}
+
+.login_frame .home_page_2 a {
+  position: relative;
+  margin-left: 100px;
+  display: flex;
+  padding: 10px;
+  font-size: 40px;
+  line-height: 40px;
+  color: #224957;
+  text-decoration: none;
+}
+
+.login_frame .home_page_1 a:hover {
+  color: #10232b;
+  text-decoration: underline #224957 solid 3px;
+}
+
+.login_frame .home_page_2 a:hover {
+  color: #10232b;
+  text-decoration: underline #224957 solid 3px;
+}
