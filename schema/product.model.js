@@ -44,6 +44,10 @@ const productSchema = new mongoose.Schema(
       required: false,
       default: 0
     },
+    product_color: {
+      type: String,
+      required: false
+    },
     product_left_cnt: {
       type: Number,
       required: true
@@ -76,9 +80,6 @@ const productSchema = new mongoose.Schema(
   { timestamps: true }
 ); //createdAt, updateAt
 
-productSchema.index(
-  { store_mb_id: 1, product_name: 1},
-  { unique: true }
-);
+productSchema.index({ store_mb_id: 1, product_name: 1 }, { unique: true });
 
 module.exports = mongoose.model("Product", productSchema);

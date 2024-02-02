@@ -11,25 +11,25 @@ body {
   justify-content: center;
   width: 100%;
   height: 100%;
-  background: #e6c48209;
+  background: #cbdcf7;
 }
 
 .login_frame {
   position: relative;
   width: 900px;
-  height: 1200px;
+  height: 1000px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   border: 2px solid white;
   border-radius: 20px;
-  background: #58270182;
+  background: #58270194;
 }
 
 .login_frame .login {
   position: absolute;
-  top: 100px;
+  top: 50px;
   font-family: "Poppins";
   font-size: 80px;
   font-weight: 500;
@@ -44,9 +44,9 @@ body {
 .login_frame .login_input_1 input {
   position: relative;
   width: 600px;
-  height: 60px;
-  margin-top: -30px;
-  margin-bottom: 160px;
+  height: 75px;
+  margin-top: -50px;
+  margin-bottom: 30px;
   display: flex;
   align-items: center;
   border: 1px solid white;
@@ -61,7 +61,7 @@ body {
 .login_frame .login_input_2 input {
   position: relative;
   width: 600px;
-  height: 60px;
+  height: 75px;
   display: flex;
   align-items: center;
   border: 1px solid white;
@@ -92,9 +92,9 @@ body {
 .login_frame .login_btn {
   position: relative;
   width: 600px;
-  height: 60px;
+  height: 75px;
   background: #224957;
-  top: 60px;
+  top: 120px;
   margin-bottom: 60px;
   font-size: 30px;
   line-height: 40px;
@@ -113,7 +113,7 @@ body {
   position: relative;
   display: flex;
   flex-direction: row;
-  top: 110px;
+  top: 150px;
   width: 200px;
   height: 50px;
   display: flex;
@@ -126,7 +126,7 @@ body {
   left: -140px;
   font-size: 40px;
   line-height: 40px;
-  color: #224957;
+  color: #152931;
   text-decoration: none;
 }
 
@@ -137,16 +137,16 @@ body {
   padding: 10px;
   font-size: 40px;
   line-height: 40px;
-  color: #224957;
+  color: #152931;
   text-decoration: none;
 }
 
 .login_frame .home_page_1 a:hover {
   color: #10232b;
-  text-decoration: underline #224957 solid 3px;
+  text-decoration: underline #030607 solid 3px;
 }
 
 .login_frame .home_page_2 a:hover {
   color: #10232b;
-  text-decoration: underline #224957 solid 3px;
+  text-decoration: underline #030607 solid 3px;
 }

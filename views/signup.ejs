@@ -1,7 +1,138 @@
 <%- include('includes/header') %>
 
+<link rel="stylesheet" type="text/css" href="/css/signup.css" />
+
 <body>
-    <h1>Signup page</h1>
+  <form
+    onsubmit="return validateSignUpForm()"
+    class="signup_container"
+    action="/store/signup"
+    method="POST"
+    enctype="multipart/form-data">
+    <div class="signup_frame">
+      <span class="signup">Signup</span>
+      <div class="signup_name">
+        <div class="signup_nick">
+          <input
+            type="text"
+            placeholder="Username"
+            name="mb_nick"
+            class="mb_nick"
+            value=""
+            required />
+        </div>
+        <div class="signup_phone">
+          <input
+            type="text"
+            placeholder="Phone number"
+            name="mb_phone"
+            class="mb_phone"
+            value=""
+            required />
+        </div>
+      </div>
+
+      <div class="signup_password">
+        <div class="signup_password_1">
+          <input
+            type="password"
+            placeholder="Password"
+            name="mb_password"
+            class="mb_password"
+            value=""
+            required />
+        </div>
+        <div class="signup_password_2">
+          <input
+            type="password"
+            placeholder="Confirm Password"
+            name="mb_confirm_password"
+            class="mb_confirm_password"
+            value=""
+            required />
+        </div>
+      </div>
+
+      <div class="signup_input_frame">
+        <div class="media_frame">
+          <img class="upload_img_frame" src="/etc/signup3.png" />
+          <div class="upload_container">
+            <div class="filebox bs3-primary preview-image">
+              <input
+                class="upload-name"
+                value="Select photo"
+                disabled="disabled" />
+              <label for="input_file">Upload Image</label>
+              <input
+                type="file"
+                id="input_file"
+                name="store_img"
+                class="upload-hidden form-control-file store_img" />
+            </div>
+            <p class="thumbnail_desc">
+              You need to upload your photo here.<br />Only: .jpg, .jpeg, .png.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <button class="login_btn" name="signup" type="submit">Login</button>
+    </div>
+  </form>
 </body>
+
+<script>
+  $(function () {
+    let fileTarget = $(".filebox .upload-hidden");
+    let filename = "";
+    fileTarget.on("change", function () {
+      if (window.FileReader) {
+        const uploading_file = $(this)[0].files[0];
+        const fileType = uploading_file["type"];
+        const validImagesTypes = ["image/jpg", "image/jpeg", "image/png"];
+        if (!validImagesTypes.includes(fileType)) {
+          alert("Please, upload image in allowed format: jpg, jpeg, png");
+        } else {
+          if (uploading_file) {
+            console.log(URL.createObjectURL(uploading_file));
+            $(".upload_img_frame")
+              .attr("src", URL.createObjectURL(uploading_file))
+              .addClass("success");
+          }
+          filename = uploading_file.name;
+        }
+      }
+
+      $(this).siblings(".upload-name").val(filename);
+    });
+  });
+
+  function validateSignUpForm() {
+    const mb_nick = $(".mb_nick").val();
+    const mb_phone = $(".mb_phone").val();
+    const mb_password = $(".mb_password").val();
+    const mb_confirm_password = $(".mb_confirm_password").val();
+    const restaurant_img = $(".store_img").get(0).files[0] ?? null;
+
+    if (
+      mb_nick == "" ||
+      mb_phone == "" ||
+      mb_password == "" ||
+      mb_confirm_password == ""
+    ) {
+      alert("Please, set all information!");
+      return false;
+    } else if (mb_password !== mb_confirm_password) {
+      alert(`Please, set the correct password`);
+      return false;
+    }
+    if (!restaurant_img) {
+      alert("Please, upload image!");
+      return false;
+    }
+
+    return true;
+  }
+</script>
 
 <%- include('includes/footer') %>

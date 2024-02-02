@@ -34,8 +34,8 @@ productController.addNewProduct = async (req, res) => {
     console.log("data", data);
 
     const html = `<script>
-                        alert(new dusg added successfully);
-                        window.location.replace('/resto/products/menu');
+                        alert(new product added successfully);
+                        window.location.replace('/store/products/menu');
                      </script>`;
     res.end(html);
   } catch (err) {

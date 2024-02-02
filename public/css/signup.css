@@ -1,0 +1,282 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.signup_container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #cbdcf7;
+}
+
+.signup_container .signup_frame {
+  position: relative;
+  height: 95%;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #58270194;
+  border: 1px solid white;
+  border-radius: 15px;
+}
+
+.signup_frame .signup {
+  position: absolute;
+  font-family: "Poppins";
+  font-size: 5rem;
+  color: aliceblue;
+  /* width: 100%;
+  height: 30px; */
+  display: flex;
+  justify-content: center;
+  top: 1%;
+}
+
+.signup_frame .signup_name {
+  position: relative;
+  width: 80%;
+  height: 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  top: auto;
+}
+
+.signup_frame .signup_name .signup_nick input {
+  position: absolute;
+  width: 400px;
+  height: 75px;
+  top: -130px;
+  left: -50px;
+  display: flex;
+  align-items: center;
+  border: 1px solid white;
+  border-radius: 13px;
+  font-family: "Poppins";
+  font-size: 26px;
+  padding-left: 10px;
+  background: #5827017e;
+  color: white;
+}
+
+.signup_frame .signup_name .signup_nick input::placeholder {
+  position: relative;
+  font-size: 30px;
+  left: 10px;
+  line-height: 400px;
+  color: white;
+}
+
+.signup_frame .signup_name .signup_phone input {
+  position: absolute;
+  width: 400px;
+  height: 75px;
+  top: -130px;
+  margin-left: 30px;
+  display: flex;
+  align-items: center;
+  border: 1px solid white;
+  border-radius: 13px;
+  font-family: "Poppins";
+  font-size: 26px;
+  padding-left: 10px;
+  background: #5827017e;
+  color: white;
+}
+
+.signup_frame .signup_name .signup_phone input::placeholder {
+  position: relative;
+  font-size: 30px;
+  left: 10px;
+  line-height: 40px;
+  color: white;
+}
+
+.signup_frame .signup_password {
+  position: relative;
+  width: 80%;
+  height: 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  top: -90px;
+}
+
+.signup_frame .signup_password .signup_password_1 input {
+  position: absolute;
+  width: 400px;
+  height: 75px;
+  left: -50px;
+  display: flex;
+  align-items: center;
+  border: 1px solid white;
+  border-radius: 13px;
+  font-family: "Poppins";
+  font-size: 26px;
+  padding-left: 10px;
+  background: #5827017e;
+  color: white;
+}
+
+.signup_frame .signup_password .signup_password_1 input::placeholder {
+  position: relative;
+  font-size: 30px;
+  left: 10px;
+  line-height: 40px;
+  color: white;
+}
+
+.signup_frame .signup_password .signup_password_2 input {
+  position: absolute;
+  width: 400px;
+  height: 75px;
+  margin-left: 30px;
+  display: flex;
+  align-items: center;
+  border: 1px solid white;
+  border-radius: 13px;
+  font-family: "Poppins";
+  font-size: 26px;
+  padding-left: 10px;
+  background: #5827017e;
+  color: white;
+}
+
+.signup_frame .signup_password .signup_password_2 input::placeholder {
+  position: relative;
+  font-size: 30px;
+  left: 10px;
+  line-height: 40px;
+  color: white;
+}
+
+.signup_frame .signup_input_frame {
+  position: relative;
+  width: 90%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.media_frame {
+  position: relative;
+  top: 35px;
+  width: 100%;
+  height: 250px;
+
+  display: flex;
+  flex: row;
+  justify-content: space-between;
+}
+
+.media_frame .upload_img_frame {
+  position: relative;
+  width: 250px;
+  height: 90%;
+  display: flex;
+  border-radius: 35px;
+}
+
+.media_frame .upload_container {
+  position: relative;
+  margin-left: 30px;
+  width: 75%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.filebox {
+  margin-top: 4px;
+  display: flex;
+}
+
+.filebox input[type="file"] {
+  position: relative;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.filebox label {
+  width: 170px;
+  height: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #6a7a99;
+  border-radius: 0px 8px 8px 0px;
+  font-family: "GT Walsheim Pro";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 26px;
+  color: white;
+}
+
+.filebox .upload-name {
+  position: relative;
+  padding: 20px;
+  width: 400px;
+  height: 65px;
+  display: flex;
+  border: 1px solid #dddddd;
+  border-radius: 8px 0px 0px 8px;
+
+  align-items: center;
+  font-family: "Poppins";
+  font-size: 25px;
+  font-weight: 550;
+  background: white;
+  color: #010200;
+}
+
+.filebox .upload-name::placeholder {
+  position: relative;
+  font-size: 30px;
+  left: 10px;
+  line-height: 40px;
+  color: white;
+}
+
+.thumbnail_desc {
+  margin-top: 25px;
+  font-family: "GT Walsheim Pro";
+  font-style: normal;
+  text-align: center;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 26px;
+  color: #010200;
+}
+
+.signup_frame .login_btn {
+  position: relative;
+  width: 600px;
+  height: 75px;
+  background: #224957;
+  top: 130px;
+  font-size: 30px;
+  line-height: 40px;
+  color: white;
+  border-radius: 13px;
+  cursor: pointer;
+}
+
+.signup_frame .login_btn:hover {
+  opacity: 95%;
+  color: white;
+  background-color: #10232b;
+}

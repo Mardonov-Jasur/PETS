@@ -12,7 +12,7 @@ class Product {
     try {
       member._id = shapeIntoMongooseObjectId(member._id);
       const result = await this.productModel.find({
-        restaurant_mb_id: member._id
+        store_mb_id: member._id
       });
       assert.ok(result, Definer.generel_err1);
       return result;

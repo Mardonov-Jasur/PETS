@@ -22,10 +22,10 @@ storeController.getMyStoreProducts = async (req, res) => {
 
     const product = new Product();
     const data = await product.getAllProductsDataResto(res.locals.member);
-    res.render("store-menu", { restaurant_data: data });
+    res.render("store-menu", { store_data: data });
   } catch (err) {
     console.log(`ERROR, cont/getMyStoreProducts, ${err.message}`);
-    res.json({ state: "fail", message: err.message });
+    res.redirect("/store");
   }
 };
 
@@ -42,11 +42,17 @@ storeController.getSignupMyStore = async (req, res) => {
 storeController.signupProcess = async (req, res) => {
   try {
     console.log("POST: cont/signupProcess");
-    const data = req.body,
-      member = new Member(),
-      new_member = await member.signupDate(data);
+     assert(req.file, Definer.generel_err3);
 
-    req.session.member = new_member;
+     let new_member = req.body;
+     new_member.member_type = "STORE";
+     new_member.member_image = req.file.path;
+
+     const member = new Member();
+     const result = await member.signupDate(new_member);
+     assert(result, Definer.generel_err1);
+
+     req.session.member = result;
     res.redirect("/store/products/menu");
   } catch (err) {
     console.log(`ERROR, cont/signupProcess, ${err.message}`);
@@ -83,8 +89,15 @@ storeController.loginProcess = async (req, res) => {
 };
 
 storeController.logout = (req, res) => {
-  console.log("GET cont.logout");
-  res.send("Siz logout sahifasidasiz");
+ try {
+   console.log("GET cont/logout");
+   req.session.destroy(function () {
+     res.redirect("/store");
+   });
+ } catch (err) {
+   console.log(`ERROR, cont/logout, ${err.message}`);
+   res.json({ state: "fail", message: err.message });
+ }
 };
 
 storeController.validateAuthRestaurant = (req, res, next) => {
