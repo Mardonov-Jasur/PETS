@@ -29,13 +29,13 @@ router_bssr
   .get("/products/menu", storeController.getMyStoreProducts)
   .post(
     "/products/create",
-    storeController.validateAuthRestaurant,
+    storeController.validateAuthStore,
     uploader_product.array("product_images", 5),
     productController.addNewProduct
   )
   .post(
     "/products/edit/:id",
-    storeController.validateAuthRestaurant,
+    storeController.validateAuthStore,
     productController.updateChosenProduct
   );
 

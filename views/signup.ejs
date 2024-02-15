@@ -112,7 +112,7 @@
     const mb_phone = $(".mb_phone").val();
     const mb_password = $(".mb_password").val();
     const mb_confirm_password = $(".mb_confirm_password").val();
-    const restaurant_img = $(".store_img").get(0).files[0] ?? null;
+    const store_img = $(".store_img").get(0).files[0] ?? null;
 
     if (
       mb_nick == "" ||
@@ -126,7 +126,7 @@
       alert(`Please, set the correct password`);
       return false;
     }
-    if (!restaurant_img) {
+    if (!store_img) {
       alert("Please, upload image!");
       return false;
     }

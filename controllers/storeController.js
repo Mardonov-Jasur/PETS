@@ -100,7 +100,7 @@ storeController.logout = (req, res) => {
  }
 };
 
-storeController.validateAuthRestaurant = (req, res, next) => {
+storeController.validateAuthStore = (req, res, next) => {
   if (req.session?.member?.mb_type === "STORE") {
     req.member = req.session.member;
     next();
